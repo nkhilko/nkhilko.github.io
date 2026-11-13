@@ -1,0 +1,20 @@
+:root {
+  color-scheme: light;
+  --paper: #f9f8f5;
+  --white: #fff;
+  --ink: #181818;
+  --muted: #555450;
+  --line: #d9d6d0;
+  --panel: #222222;
+  --panel-line: #525252;
+  --panel-muted: #c6c4bf;
+  --soft: #eeece7;
+  --page-width: 1120px;
+  --gutter: clamp(1.15rem, 4.2vw, 3.5rem);
+  --sans: Inter, "Helvetica Neue", Arial, sans-serif;
+  --mono: "IBM Plex Mono", "SFMono-Regular", Consolas, monospace;
+  --fast: 180ms;
+  --header-time: 220ms;
+  --reveal-time: 400ms;
+  --ease: cubic-bezier(.2,.65,.3,1);
+}
