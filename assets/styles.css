@@ -86,12 +86,14 @@ ul, ol { margin: 0; }
 .detail-pair ul { padding-left: 1.2rem; }
 .detail-pair li + li { margin-top: .4rem; }
 .architecture, .detail-impact, .detail-footer { border-top: 1px solid var(--line); padding-top: 1.45rem; margin-top: 1.65rem; }
-.figure-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 390px), 1fr)); gap: 12px; align-items: start; }
+.figure-grid { display: grid; grid-template-columns: minmax(0, 1fr); gap: 12px; align-items: start; }
 .diagram { padding: clamp(.75rem, 2vw, 1.45rem); background: var(--paper); border: 1px solid var(--line); min-width: 0; }
 .diagram figcaption { display: grid; gap: .22rem; }
 .diagram-title { font-weight: 670; font-size: 1.05rem; letter-spacing: -.03em; }
 .diagram-art { max-width: 720px; margin: .65rem auto .25rem; }
 .diagram-description { font-size: .87rem; line-height: 1.46; }
+.diagram-text > summary { cursor: pointer; width: fit-content; padding: .4rem 0; font-size: .88rem; }
+.diagram-text ol { max-width: 68ch; padding-left: 1.25rem; font-size: .87rem; line-height: 1.46; }
 .detail-svg, .overview-svg { display: block; width: 100%; height: auto; overflow: visible; }
 .overview-svg { max-width: 352px; }
 .detail-svg.narrow { display: none; }
@@ -101,7 +103,7 @@ ul, ol { margin: 0; }
 .overview-svg .node text, .detail-svg.narrow .node text { font-size: 11px; }
 .edge { fill: none; stroke: currentColor; stroke-width: 1.15; }
 .edge-label { font-size: 10px; }
-.detail-svg.narrow .edge-label { font-size: 8px; }
+.detail-svg.narrow .edge-label { font-size: 10px; }
 .boundary { fill: none; stroke: currentColor; opacity: .45; stroke-width: 1; stroke-dasharray: 6 4; }
 .boundary-label { font: 500 11px var(--mono); }
 .detail-svg.narrow .boundary-label { font-size: 9px; }
@@ -158,10 +160,6 @@ a:is(:hover, :focus-visible) > .arrow { transform: translateX(3px); }
   .case-feature .case-summary { grid-template-columns: 1fr; }
   .case-feature .case-copy h3 { max-width: 100%; }
   .feature-figure { border-left: 0; border-top: 1px solid var(--panel-line); padding: .85rem 0 0; }
-  .figure-grid { grid-template-columns: 1fr; }
-}
-@media (min-width: 741px) and (max-width: 1120px) {
-  #legal-operations .figure-grid { grid-template-columns: 1fr; }
 }
 @media (max-width: 540px) {
   .brand { font-size: .98rem; }
