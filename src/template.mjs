@@ -69,6 +69,7 @@ function renderCase(id) {
         ${project.metrics ? metrics(project.metrics) : ''}
         <p>${e(project.impact)}</p>
         ${project.comparison ? comparison(project.comparison) : ''}
+        ${project.demo ? `<p><a class="related-link" href="${e(project.demo.url)}">Public reference implementation</a>. ${e(project.demo.detail)}</p>` : ''}
       </div>
       <div class="detail-footer">
         <a href="#${id}" data-project-link>Link to this case ${external}</a>

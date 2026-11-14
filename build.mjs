@@ -12,18 +12,22 @@ const pageUrl = process.env.PORTFOLIO_BASE_URL;
 const socialImage = pageUrl
   ? new URL('./assets/social.png', pageUrl).href
   : './assets/social.png';
-await mkdir(fromRoot('./dist/assets'), { recursive: true });
+const output = fromRoot('./dist/');
+const file = (name) => new URL(name, output);
+await mkdir(file('assets'), { recursive: true });
 await Promise.all([
-  writeFile(fromRoot('./dist/index.html'), renderPage({ socialImage, pageUrl })),
-  writeFile(fromRoot('./dist/.nojekyll'), ''),
-  writeFile(fromRoot('./dist/assets/styles.css'), styles),
-  writeFile(fromRoot('./dist/assets/tokens.css'), tokens),
-  writeFile(fromRoot('./dist/assets/interactions.js'), script),
-  cp(fromRoot('./src/social.png'), fromRoot('./dist/assets/social.png')),
+  writeFile(file('index.html'), renderPage({ socialImage, pageUrl })),
+  writeFile(file('.nojekyll'), ''),
+  writeFile(file('assets/styles.css'), styles),
+  writeFile(file('assets/tokens.css'), tokens),
+  writeFile(file('assets/interactions.js'), script),
+  cp(fromRoot('./src/social.png'), file('assets/social.png')),
 ]);
 if (process.argv.includes('--preview')) {
   const socialData = (await readFile(fromRoot('./src/social.png'))).toString('base64');
-  await writeFile(fromRoot('../Nikita-Khilko-Portfolio.html'), renderPage({
+  const preview = fromRoot('./preview/');
+  await mkdir(preview, { recursive: true });
+  await writeFile(new URL('index.html', preview), renderPage({
     inlineAssets: true, styles, script, tokens, socialImage: `data:image/png;base64,${socialData}`,
   }));
 }
