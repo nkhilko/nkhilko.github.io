@@ -81,6 +81,7 @@ export const projects = {
       ['Human review', '3–5 min'],
       ['Automated workflow + review', '5–8 min'],
     ],
+    demo: { url: 'https://github.com/nkhilko/checklist-production-pipeline', detail: 'An offline demo renders fictional checklists and verifies publication in a mock catalog.' },
     diagrams: ['checklists'], overview: ['topic', 'prepare', 'review', 'publish'],
   },
   'sketchsy-commerce': {
@@ -109,6 +110,7 @@ export const projects = {
     ],
     impact: 'A shared release record gives each channel a consistent product reference and makes remaining publication work visible. A performance-learning loop using publishing and sales data is under development.',
     decisions: 'The release record coordinates the workflow while the storefront and distribution channels remain responsible for their own publication state. This keeps editorial control and channel verification explicit.',
+    demo: { url: 'https://github.com/nkhilko/multichannel-release-orchestrator', detail: 'An offline demo uses synthetic releases and mock delivery channels.' },
     diagrams: ['release'], overview: ['intake', 'prepare', 'review', 'publish'],
   },
   'sketchsy-cinematic': {
@@ -123,6 +125,7 @@ export const projects = {
     ],
     impact: 'An accepted camera geometry preview and subsequent framing stills provide evidence of progress. The full production workflow remains active R&D.',
     decisions: 'Blender supports scene reconstruction, camera validation and CPU rendering. Reference assets and original artwork serve as inputs. CPU rendering lets me validate the camera and composition within the available cloud resources.',
+    demo: { url: 'https://github.com/nkhilko/cinematic-geometry-demo', detail: 'A planar geometry demo uses synthetic artwork to verify the camera path and framing.' },
     diagrams: ['cinematic'], overview: ['reference', 'scene', 'camera', 'fidelity'],
   },
   'limon-ad': {
